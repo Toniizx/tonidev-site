@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ToniDev | Sites, identidade visual e conteúdo com IA para negócios locais</title>
+  <meta name="description" content="Antonio Nogueira (ToniDev) cria sites, identidades visuais, perfis do Google e fotos e vídeos de produto com IA para negócios locais. Faça um diagnóstico grátis em 30 segundos." />
+  <meta property="og:title" content="ToniDev | Descubra o que seu negócio precisa" />
+  <meta property="og:description" content="Responda 4 perguntas rápidas e veja o que dá para melhorar na presença digital do seu negócio." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://antonionogueira.com.br/" />
+  <meta name="theme-color" content="#0B1433" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230B1433'/%3E%3Cg transform='translate(4 4) scale(1.4)'%3E%3Cpath d='M3 8a3 3 0 0 1 3-3h28a3 3 0 0 1 3 3v6a4.25 4.25 0 0 1-8.5 0a4.25 4.25 0 0 1-8.5 0a4.25 4.25 0 0 1-8.5 0a4.25 4.25 0 0 1-8.5 0z' fill='%232B59FF'/%3E%3Crect x='15.5' y='21' width='9' height='16' rx='1.6' fill='%23FFB224'/%3E%3C/g%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- gradiente do medidor do resultado -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <!-- logo: um T feito de toldo listrado (a barra) e porta acesa (a perna) -->
+      <clipPath id="marca-toldo"><path d="M3 8a3 3 0 0 1 3-3h28a3 3 0 0 1 3 3v6a4.25 4.25 0 0 1-8.5 0a4.25 4.25 0 0 1-8.5 0a4.25 4.25 0 0 1-8.5 0a4.25 4.25 0 0 1-8.5 0z"/></clipPath>
+      <symbol id="marca" viewBox="0 0 40 40">
+        <g clip-path="url(#marca-toldo)">
+          <rect x="0" y="0" width="40" height="20" fill="#2B59FF"/>
+          <rect x="3" y="0" width="8.5" height="20" fill="#6F8FFF"/>
+          <rect x="20" y="0" width="8.5" height="20" fill="#6F8FFF"/>
+        </g>
+        <rect x="15" y="19.5" width="10" height="17.5" rx="1.8" fill="#FFB224"/>
+        <circle cx="22" cy="29" r="1.1" fill="#0B1433"/>
+      </symbol>
+      <linearGradient id="g-dial" x1="0" x2="1"><stop offset="0" stop-color="#2B59FF"/><stop offset="1" stop-color="#FFB224"/></linearGradient></defs>
+  </svg>
+
+  <header class="topbar" id="topo">
+    <div class="wrap topbar__in">
+      <a href="#" class="brand" aria-label="ToniDev, início"><svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true"><use href="#marca"/></svg><span class="brand__name">Toni<span>Dev</span></span></a>
+      <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu">
+        <span class="menu-btn__icone" aria-hidden="true"><i></i><i></i></span>Menu
+      </button>
+      <nav class="nav" id="menu" aria-label="Principal">
+        <a href="#servicos">Serviços</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#como">Como funciona</a>
+        <a href="#sobre">Sobre</a>
+        <button class="btn nav__cta" data-open-quiz>Fazer o diagnóstico grátis</button>
+      </nav>
+      <button class="btn btn--small btn--light" data-open-quiz>Fazer diagnóstico</button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- Abertura: a rua do bairro à noite -->
+    <section class="hero">
+      <div class="wrap hero__in">
+        <h1><span class="h1__rua">Na rua, todo mundo te conhece.</span> <span class="h1__google">No Google, ninguém te acha.</span></h1>
+        <p class="hero__lead">Eu faço site, marca, perfil no Google e fotos para o seu negócio aparecer para quem procura. Descubra em 30 segundos o que está faltando no seu.</p>
+        <div class="hero__cta">
+          <button class="btn btn--big" data-open-quiz data-acende>Ver o que falta no meu negócio</button>
+          <p class="hero__note">Leva 30 segundos e não pede cadastro.</p>
+        </div>
+      </div>
+
+      <div class="rua">
+        <div class="rua__lojas">
+          <span class="poste" style="--x: 13.2%" aria-hidden="true"></span>
+          <span class="poste" style="--x: 86.8%" aria-hidden="true"></span>
+
+          <div class="loja" style="--h: 250px; --w: 180px; --d: 0; --f: #13204f" aria-hidden="true">
+            <span class="loja__janelas"></span>
+            <span class="loja__placa">Ateliê Lina</span>
+            <span class="loja__toldo"></span>
+            <span class="loja__frente"><i class="vitrine"></i><i class="porta"></i></span>
+          </div>
+          <div class="loja" style="--h: 205px; --w: 190px; --d: 1; --f: #172656" aria-hidden="true">
+            <span class="loja__placa">Navalha &amp; Co.</span>
+            <span class="loja__toldo"></span>
+            <span class="loja__frente"><i class="vitrine"></i><i class="porta"></i></span>
+          </div>
+          <div class="loja" style="--h: 290px; --w: 200px; --d: 2; --f: #111c48" aria-hidden="true">
+            <span class="loja__janelas"></span>
+            <span class="loja__placa">Forno da Vila</span>
+            <span class="loja__toldo"></span>
+            <span class="loja__frente"><i class="vitrine"></i><i class="porta"></i></span>
+          </div>
+
+          <button class="loja loja--sua" style="--h: 240px; --w: 210px; --f: #0e1740" data-open-quiz data-acende aria-label="Seu negócio: fazer o diagnóstico grátis">
+            <span class="loja__janelas"></span>
+            <span class="loja__placa">Seu negócio</span>
+            <span class="loja__toldo"></span>
+            <span class="loja__frente"><i class="vitrine"></i><i class="porta"></i></span>
+            <span class="cavalete"><span class="cavalete__off">Essa é a sua?</span><span class="cavalete__on">Agora te acham</span></span>
+          </button>
+
+          <div class="loja" style="--h: 270px; --w: 200px; --d: 3; --f: #15235a" aria-hidden="true">
+            <span class="loja__janelas"></span>
+            <span class="loja__placa">Brasa Burger</span>
+            <span class="loja__toldo"></span>
+            <span class="loja__frente"><i class="vitrine"></i><i class="porta"></i></span>
+          </div>
+          <div class="loja" style="--h: 215px; --w: 190px; --d: 4; --f: #111c48" aria-hidden="true">
+            <span class="loja__placa">Patas Felizes</span>
+            <span class="loja__toldo"></span>
+            <span class="loja__frente"><i class="vitrine"></i><i class="porta"></i></span>
+          </div>
+          <div class="loja" style="--h: 255px; --w: 180px; --d: 5; --f: #172656" aria-hidden="true">
+            <span class="loja__janelas"></span>
+            <span class="loja__placa">Sorriso Leve</span>
+            <span class="loja__toldo"></span>
+            <span class="loja__frente"><i class="vitrine"></i><i class="porta"></i></span>
+          </div>
+        </div>
+        <div class="calcada" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="section">
+      <div class="wrap">
+        <h2 class="h2">O que eu faço pelo seu negócio</h2>
+        <p class="section__lead">Dá para começar por um serviço e somar os outros depois.</p>
+        <div class="services">
+          <article class="service">
+            <h3>Site</h3>
+            <p>Rápido, feito para o celular, com um botão que leva direto para o seu WhatsApp. Para quem pesquisa no Google e quer resolver logo.</p>
+            <p class="service__inclui">Cardápio ou catálogo, fotos, localização, horário e pedido pelo WhatsApp.</p>
+          </article>
+          <article class="service">
+            <h3>Identidade visual</h3>
+            <p>Logo, cores e fontes, com o padrão para usar na fachada, no cardápio, nas redes e na embalagem. A marca passa a ser lembrada.</p>
+            <p class="service__inclui">Três caminhos para você escolher e um guia da marca pronto para usar.</p>
+          </article>
+          <article class="service">
+            <h3>Google Meu Negócio</h3>
+            <p>Perfil completo e bem escrito, para aparecer antes do concorrente quando alguém procura o seu tipo de negócio no bairro.</p>
+            <p class="service__inclui">Categorias, descrição, produtos, posts, respostas às avaliações e uma mensagem pronta para pedir avaliação.</p>
+          </article>
+          <article class="service">
+            <h3>Fotos e vídeos com IA</h3>
+            <p>As fotos que você já tem viram imagens com cara de estúdio e vídeos curtos para o Instagram, o Google e anúncios.</p>
+            <p class="service__inclui">Sem marcar sessão de fotos. O produto continua sendo o seu, só o cenário muda.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Antes e depois -->
+    <section id="antes-depois" class="section section--ad">
+      <div class="wrap">
+        <h2 class="h2">O mesmo negócio, antes e depois</h2>
+        <p class="section__lead">Arraste a linha para comparar uma padaria que só existe no bairro com uma que também é encontrada na internet.</p>
+
+        <div class="ad" id="ad" style="--pos: 50%">
+          <!-- antes -->
+          <div class="ad__lado ad__lado--antes" aria-hidden="true">
+            <span class="ad__selo">Hoje</span>
+            <div class="ad__grade">
+              <div class="ad__bloco ad__marca"><span class="logo-antes">PADARIA<br>DA VILA</span><small>Sem logo e sem cores definidas</small></div>
+              <div class="ad__bloco ad__foto"><span class="foto-antes"></span><small>Foto escura, tirada às pressas</small></div>
+              <div class="ad__bloco ad__google">
+                <b>Padaria da Vila</b>
+                <small>Sem fotos e sem horário</small>
+                <small>Nenhuma avaliação respondida</small>
+              </div>
+              <div class="ad__bloco ad__site"><span class="sem-site">Sem site</span><small>Só um Instagram parado</small></div>
+            </div>
+          </div>
+
+          <!-- depois -->
+          <div class="ad__lado ad__lado--depois" aria-hidden="true">
+            <span class="ad__selo ad__selo--depois">Depois</span>
+            <div class="ad__grade">
+              <div class="ad__bloco ad__marca">
+                <span class="logo-depois"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="56" fill="#7A2E1D"/><circle cx="60" cy="60" r="47" fill="none" stroke="#E9A23B" stroke-width="2" stroke-dasharray="3 5"/><path d="M34 66c0-14 12-24 26-24s26 10 26 24v6H34z" fill="#E9A23B"/><path d="M44 58c4-4 8-4 12 0M58 54c4-4 8-4 12 0" stroke="#7A2E1D" stroke-width="3" fill="none" stroke-linecap="round"/><text x="60" y="92" text-anchor="middle" font-family="Georgia,serif" font-size="8.5" font-weight="700" fill="#FFF4E0" letter-spacing=".6">FORNO DA VILA</text></svg></span>
+                <small>Logo, cores e fontes da marca</small>
+              </div>
+              <div class="ad__bloco ad__foto"><span class="foto-depois"><i class="pao pao--frances"></i><i class="pao pao--broa"></i></span><small>Foto de produto com cara de estúdio</small></div>
+              <div class="ad__bloco ad__google">
+                <b>Forno da Vila</b>
+                <small><i class="stars"></i>Padaria artesanal</small>
+                <small class="verde">Aberto agora, com fotos e horários</small>
+              </div>
+              <div class="ad__bloco ad__site">
+                <span class="mini-site"><i></i><i></i><em>Encomendar no WhatsApp</em></span>
+                <small>Site com encomendas pelo WhatsApp</small>
+              </div>
+            </div>
+          </div>
+
+          <span class="ad__linha" aria-hidden="true"><span class="ad__alca"><svg viewBox="0 0 24 24"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span></span>
+          <input class="ad__range" type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois: arraste para os lados" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Projetos -->
+    <section id="projetos" class="section">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <h2 class="h2">Projetos</h2>
+            <p class="section__lead">Marcas fictícias que criei para mostrar como eu trabalharia em cada ramo. Os projetos de clientes entram aqui conforme forem entregues.</p>
+          </div>
+          <div class="filters" role="group" aria-label="Filtrar por ramo" id="filtros"></div>
+        </div>
+        <div class="projects" id="lista-projetos"></div>
+        <p class="swipe-hint" aria-hidden="true">Arraste para o lado para ver mais</p>
+      </div>
+    </section>
+
+    <!-- Como funciona -->
+    <section id="como" class="section">
+      <div class="wrap">
+        <h2 class="h2">Como funciona</h2>
+        <ol class="steps">
+          <li>
+            <h3>Conversa rápida</h3>
+            <p>Pelo WhatsApp ou numa chamada de 15 minutos. Entendo o seu negócio, seu público e o que você quer resolver primeiro.</p>
+          </li>
+          <li>
+            <h3>Proposta clara</h3>
+            <p>O que vou fazer, quanto custa e quando entrego, numa mensagem só. Sem letra miúda.</p>
+          </li>
+          <li>
+            <h3>Criação com você</h3>
+            <p>Você acompanha e opina em cada etapa. Ajusto até ficar do jeito certo.</p>
+          </li>
+          <li>
+            <h3>No ar e por perto</h3>
+            <p>Publico, ensino você a usar e continuo disponível para ajustes.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="section">
+      <div class="wrap about">
+        <div class="about__mono" aria-hidden="true">AN</div>
+        <div>
+          <h2 class="h2">Prazer, Antonio Nogueira</h2>
+          <p>Sou desenvolvedor e designer freelancer. Crio sites rápidos, marcas com personalidade e fotos com inteligência artificial para negócios locais que querem ser encontrados e escolhidos.</p>
+          <p>Você fala direto comigo, do primeiro oi até a entrega. Sem agência no meio e sem enrolação.</p>
+          <p class="about__tools">Trabalho com HTML, CSS e JavaScript, React e Next.js, SEO local, design de marca e imagem com IA.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chamada final -->
+    <section class="section final">
+      <div class="wrap final__in">
+        <h2 class="h2">Comece pelo diagnóstico</h2>
+        <p>Em 30 segundos você sabe o que falta e vê exemplos do seu ramo. Se fizer sentido, a gente conversa.</p>
+        <div class="final__cta">
+          <button class="btn btn--big" data-open-quiz>Fazer o diagnóstico</button>
+          <a class="btn btn--ghost" id="whats-direto" href="#" target="_blank" rel="noopener">Prefiro falar no WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resultado do diagnóstico (preenchido pelo app.js) -->
+    <section id="resultado" class="result" hidden tabindex="-1" aria-labelledby="resultado-titulo"></section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__in">
+      <span class="brand"><svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true"><use href="#marca"/></svg><span class="brand__name">Toni<span>Dev</span></span></span>
+      <span>Antonio Nogueira, <span id="ano"></span></span>
+    </div>
+  </footer>
+
+  <!-- Diagnóstico -->
+  <dialog id="quiz" class="quiz" aria-labelledby="quiz-titulo">
+    <form method="dialog" class="quiz__in" novalidate>
+      <header class="quiz__top">
+        <div class="quiz__progress" aria-hidden="true"><span id="quiz-bar"></span></div>
+        <span class="quiz__count" id="quiz-count">1 de 4</span>
+        <button type="button" class="quiz__close" data-close aria-label="Fechar diagnóstico">×</button>
+      </header>
+      <div id="quiz-steps"></div>
+      <footer class="quiz__nav">
+        <button type="button" class="btn btn--ghost" id="quiz-voltar">Voltar</button>
+        <button type="button" class="btn" id="quiz-seguir">Continuar</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <script src="projetos.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
