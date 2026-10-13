@@ -1,4 +1,4 @@
-/* ToniDev: diagnóstico, resultado personalizado e projetos */
+/* ToniDev (site novo): diagnóstico, resultado, projetos, menu, busca e animações */
 
 const WHATSAPP = '5531972359811' // número que recebe os contatos (só dígitos, com 55 + DDD)
 
@@ -108,7 +108,7 @@ const PASSOS = [
       </div>
       <label class="field ${st.ramo === 'outro' ? '' : 'is-hidden'}" id="ramo-outro">
         <span>Qual é o seu negócio?</span>
-        <input type="text" value="${esc(st.ramoOutro)}" placeholder="ex.: loja de material de construção" maxlength="60" />
+        <input type="text" value="${esc(st.ramoOutro)}" name="ramo-outro" autocomplete="off" placeholder="ex.: loja de material de construção…" maxlength="60" />
       </label>`,
     valido: () => !!st.ramo && (st.ramo !== 'outro' || st.ramoOutro.trim().length > 1),
   },
@@ -136,9 +136,9 @@ const PASSOS = [
     ajuda: 'É só para personalizar o seu resultado. Nada é enviado sem você clicar.',
     render: () => `
       <label class="field"><span>Nome do negócio</span>
-        <input type="text" id="f-nome" value="${esc(st.nome)}" placeholder="ex.: Padaria Pão Quente" maxlength="60" autocomplete="organization" /></label>
+        <input type="text" id="f-nome" value="${esc(st.nome)}" name="nome-do-negocio" placeholder="ex.: Padaria Pão Quente…" maxlength="60" autocomplete="organization" /></label>
       <label class="field"><span>Cidade <em>(opcional)</em></span>
-        <input type="text" id="f-cidade" value="${esc(st.cidade)}" placeholder="ex.: Belo Horizonte" maxlength="40" autocomplete="address-level2" /></label>`,
+        <input type="text" id="f-cidade" value="${esc(st.cidade)}" name="cidade" placeholder="ex.: Belo Horizonte…" maxlength="40" autocomplete="address-level2" /></label>`,
     valido: () => st.nome.trim().length > 1,
   },
 ]
@@ -458,61 +458,114 @@ document.addEventListener('click', (e) => {
   if (a && document.body.classList.contains('showing-result')) fecharResultado()
 })
 
-// ---------------------------------------------------------------- menu
 
-const topo = $('#topo')
-const menuBtn = $('#menu-btn')
-const abrirMenu = (sim) => {
-  topo.classList.toggle('is-open', sim)
-  menuBtn.setAttribute('aria-expanded', String(sim))
+// ---------------------------------------------------------------- site novo: menu, busca e animações
+
+const calma = matchMedia('(prefers-reduced-motion: reduce)').matches
+
+// Menu: a ilha vira menu de tela cheia no celular
+const ilha = $('#ilha')
+const hamburguer = $('#hamburguer')
+const menuCheio = $('#menu-cheio')
+function abrirMenu(sim) {
+  ilha.classList.toggle('is-aberto', sim)
+  hamburguer.setAttribute('aria-expanded', String(sim))
+  hamburguer.setAttribute('aria-label', sim ? 'Fechar menu' : 'Abrir menu')
+  document.body.style.overflow = sim ? 'hidden' : ''
+  if (sim) {
+    menuCheio.hidden = false
+    void menuCheio.offsetWidth // garante que a animação de entrada aconteça
+    menuCheio.classList.add('is-visivel')
+  } else {
+    menuCheio.classList.remove('is-visivel')
+    setTimeout(() => { if (!ilha.classList.contains('is-aberto')) menuCheio.hidden = true }, 400)
+  }
 }
-menuBtn.addEventListener('click', () => abrirMenu(!topo.classList.contains('is-open')))
-$$('#menu a, #menu button').forEach((a) => a.addEventListener('click', () => abrirMenu(false)))
-document.addEventListener('keydown', (e) => e.key === 'Escape' && abrirMenu(false))
-const marcarRolagem = () => topo.classList.toggle('is-scrolled', scrollY > 20)
-addEventListener('scroll', marcarRolagem, { passive: true })
-marcarRolagem()
+hamburguer.addEventListener('click', () => abrirMenu(!ilha.classList.contains('is-aberto')))
+$$('#menu-cheio a, #menu-cheio button').forEach((el) => el.addEventListener('click', () => abrirMenu(false)))
+document.addEventListener('keydown', (e) => e.key === 'Escape' && ilha.classList.contains('is-aberto') && abrirMenu(false))
 
-// ---------------------------------------------------------------- rua da abertura
-
-// A loja "Seu negócio" acende quando a pessoa chega perto dela ou do botão
-const suaLoja = $('.loja--sua')
-const acender = (sim) => {
-  suaLoja.classList.toggle('is-on', sim)
-  $('.hero').classList.toggle('is-on', sim)
+// A busca na abertura: alguém digita, o resultado aparece e chega uma mensagem no WhatsApp
+const EXEMPLOS = [
+  { termo: 'padaria perto de mim', nome: 'Padaria Pão da Hora', tipo: 'Padaria', msg: 'Oi! Te achei no Google. Vocês fazem encomenda para sábado?' },
+  { termo: 'personal trainer em BH', nome: 'Carla Mendes Personal', tipo: 'Personal trainer', msg: 'Oi, Carla! Vi seu perfil no Google. Ainda tem horário de manhã?' },
+  { termo: 'fotógrafo de casamento', nome: 'Rafael Lima Fotografia', tipo: 'Fotógrafo', msg: 'Oi! Vi seu site e amei as fotos. Você tem data livre em março?' },
+  { termo: 'barbearia aberta agora', nome: 'Barbearia do Zé', tipo: 'Barbearia', msg: 'Fala, Zé! Te achei no Google. Dá para cortar agora à tarde?' },
+]
+const termo = $('#g-termo')
+const resultado = $('#g-resultado')
+const notificacao = $('#notificacao')
+const espera = (ms) => new Promise((r) => setTimeout(r, ms))
+function mostrarExemplo(ex) {
+  $('#g-nome').textContent = ex.nome
+  $('#g-tipo').textContent = ex.tipo
+  $('#g-inicial').textContent = ex.nome[0]
+  $('#g-msg').textContent = ex.msg
 }
-if (suaLoja) {
-  $$('[data-acende]').forEach((el) => {
-    el.addEventListener('pointerenter', (e) => e.pointerType === 'mouse' && acender(true))
-    el.addEventListener('pointerleave', (e) => e.pointerType === 'mouse' && acender(false))
-    el.addEventListener('focus', () => acender(true))
-    el.addEventListener('blur', () => acender(false))
-  })
-  // No celular não há mouse: depois de piscar, a loja acende sozinha
-  if (!matchMedia('(hover: hover)').matches) setTimeout(() => acender(true), 5200)
-}
-
-// Antes e depois: a linha segue o dedo ou o mouse
-const ad = $('#ad')
-if (ad) {
-  const range = $('.ad__range', ad)
-  const posicionar = (v) => ad.style.setProperty('--pos', `${v}%`)
-  range.addEventListener('input', () => posicionar(range.value))
-  // ao aparecer, a linha passeia uma vez para mostrar que dá para arrastar
-  const mostrar = new IntersectionObserver(([it]) => {
-    if (!it.isIntersecting) return
-    mostrar.disconnect()
-    const t0 = performance.now()
-    const passo = (t) => {
-      const k = Math.min(1, (t - t0) / 1800)
-      const v = 50 + Math.sin(k * Math.PI * 2) * 22 * (1 - k)
-      posicionar(v)
-      range.value = v
-      if (k < 1) requestAnimationFrame(passo)
+async function rodarBusca() {
+  if (calma) {
+    mostrarExemplo(EXEMPLOS[0])
+    termo.textContent = EXEMPLOS[0].termo
+    resultado.classList.add('is-on')
+    notificacao.classList.add('is-on')
+    return
+  }
+  for (let i = 0; ; i = (i + 1) % EXEMPLOS.length) {
+    const ex = EXEMPLOS[i]
+    mostrarExemplo(ex)
+    termo.textContent = ''
+    for (const letra of ex.termo) {
+      termo.textContent += letra
+      await espera(55)
     }
-    setTimeout(() => requestAnimationFrame(passo), 500)
-  }, { threshold: 0.5 })
-  mostrar.observe(ad)
+    await espera(350)
+    resultado.classList.add('is-on')
+    await espera(1100)
+    notificacao.classList.add('is-on')
+    await espera(3200)
+    notificacao.classList.remove('is-on')
+    resultado.classList.remove('is-on')
+    await espera(700)
+  }
+}
+if (termo) setTimeout(rodarBusca, 900)
+
+// Elementos aparecem ao entrar na tela, em sequência com os vizinhos
+const vigia = new IntersectionObserver(
+  (itens) => itens.forEach((it) => {
+    if (!it.isIntersecting) return
+    it.target.classList.add('is-in')
+    vigia.unobserve(it.target)
+  }),
+  { rootMargin: '0px 0px -12% 0px' },
+)
+// a comparação se resolve quando entra na tela
+const comparar = $('#comparar')
+if (comparar) (calma ? comparar.classList.add('is-in') : vigia.observe(comparar))
+$$('.revela').forEach((el) => {
+  const irmaos = [...el.parentElement.children].filter((x) => x.classList.contains('revela'))
+  el.style.setProperty('--i', irmaos.indexOf(el))
+  if (calma) el.classList.add('is-in')
+  else vigia.observe(el)
+})
+
+// A frase acende palavra por palavra conforme a rolagem
+const frase = $('#frase')
+if (frase) {
+  const texto = frase.textContent.trim()
+  const palavras = texto.split(/\s+/)
+  frase.innerHTML = palavras.map((p, i) => `<span class="pal" style="--c:${(i / palavras.length).toFixed(3)}">${esc(p)}</span>`).join(' ')
+  frase.setAttribute('aria-label', texto)
+  let pedido = false
+  const atualizar = () => {
+    pedido = false
+    const r = frase.getBoundingClientRect()
+    const vh = innerHeight
+    const p = Math.min(1, Math.max(0, (vh * 0.9 - r.top) / (r.height + vh * 0.35)))
+    frase.style.setProperty('--p', calma ? 1 : p.toFixed(3))
+  }
+  addEventListener('scroll', () => { if (!pedido) (pedido = true), requestAnimationFrame(atualizar) }, { passive: true })
+  atualizar()
 }
 
 // ---------------------------------------------------------------- início
@@ -520,5 +573,5 @@ if (ad) {
 desenharFiltros()
 desenharProjetos()
 $('#ano').textContent = new Date().getFullYear()
-$('#whats-direto').href = waLink(`Oi, Antonio! Vi seu site e queria conversar sobre o meu negócio.${ref ? `\n\nCódigo: #${ref}` : ''}`)
+$$('.js-whats').forEach((a) => (a.href = waLink(`Oi, Antonio! Vi seu site e queria conversar sobre o meu negócio.${ref ? `\n\nCódigo: #${ref}` : ''}`)))
 if (new URLSearchParams(location.search).has('diagnostico')) abrirQuiz()

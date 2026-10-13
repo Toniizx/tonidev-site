@@ -3,261 +3,255 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ToniDev | Sites, identidade visual e conteúdo com IA para negócios locais</title>
-  <meta name="description" content="Antonio Nogueira (ToniDev) cria sites, identidades visuais, perfis do Google e fotos e vídeos de produto com IA para negócios locais. Faça um diagnóstico grátis em 30 segundos." />
-  <meta property="og:title" content="ToniDev | Descubra o que seu negócio precisa" />
-  <meta property="og:description" content="Responda 4 perguntas rápidas e veja o que dá para melhorar na presença digital do seu negócio." />
+  <title>ToniDev | Seja encontrado por quem procura você</title>
+  <meta name="description" content="Antonio Nogueira (ToniDev) cuida da presença online de negócios e profissionais: perfil no Google, site, marca, fotos e assistentes de IA. Faça o diagnóstico grátis em 30 segundos." />
+  <meta property="og:title" content="ToniDev | Seu cliente está no Google. E você?" />
+  <meta property="og:description" content="Responda 4 perguntas e veja o que falta para você ser encontrado por quem procura no celular." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://antonionogueira.com.br/" />
-  <meta name="theme-color" content="#0B1433" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230B1433'/%3E%3Cg transform='translate(4 4) scale(1.4)'%3E%3Cpath d='M3 8a3 3 0 0 1 3-3h28a3 3 0 0 1 3 3v6a4.25 4.25 0 0 1-8.5 0a4.25 4.25 0 0 1-8.5 0a4.25 4.25 0 0 1-8.5 0a4.25 4.25 0 0 1-8.5 0z' fill='%232B59FF'/%3E%3Crect x='15.5' y='21' width='9' height='16' rx='1.6' fill='%23FFB224'/%3E%3C/g%3E%3C/svg%3E" />
+  <meta name="theme-color" content="#F3F4F1" />
+  <link rel="icon" href="logo.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://unpkg.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,300..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/light/style.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
-  <!-- gradiente do medidor do resultado -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <defs>
-      <!-- logo: um T feito de toldo listrado (a barra) e porta acesa (a perna) -->
-      <clipPath id="marca-toldo"><path d="M3 8a3 3 0 0 1 3-3h28a3 3 0 0 1 3 3v6a4.25 4.25 0 0 1-8.5 0a4.25 4.25 0 0 1-8.5 0a4.25 4.25 0 0 1-8.5 0a4.25 4.25 0 0 1-8.5 0z"/></clipPath>
-      <symbol id="marca" viewBox="0 0 40 40">
-        <g clip-path="url(#marca-toldo)">
-          <rect x="0" y="0" width="40" height="20" fill="#2B59FF"/>
-          <rect x="3" y="0" width="8.5" height="20" fill="#6F8FFF"/>
-          <rect x="20" y="0" width="8.5" height="20" fill="#6F8FFF"/>
-        </g>
-        <rect x="15" y="19.5" width="10" height="17.5" rx="1.8" fill="#FFB224"/>
-        <circle cx="22" cy="29" r="1.1" fill="#0B1433"/>
+      <!-- logo: balão de conversa no formato de alfinete de mapa (achar e chamar) -->
+      <symbol id="logo" viewBox="0 0 40 42">
+        <path d="M14 2h12a12 12 0 0 1 12 12v5a12 12 0 0 1-12 12h-2.6L20 40.5 16.6 31H14A12 12 0 0 1 2 19v-5A12 12 0 0 1 14 2z" fill="currentColor"/>
+        <circle cx="20" cy="16.5" r="6.4" style="fill: var(--logo-ponto, #12A866)"/>
+        <circle cx="20" cy="16.5" r="2.5" style="fill: var(--logo-miolo, #F3F4F1)"/>
       </symbol>
-      <linearGradient id="g-dial" x1="0" x2="1"><stop offset="0" stop-color="#2B59FF"/><stop offset="1" stop-color="#FFB224"/></linearGradient></defs>
+      <linearGradient id="g-dial" x1="0" x2="1"><stop offset="0" stop-color="#15171A"/><stop offset="1" stop-color="#12A866"/></linearGradient>
+    </defs>
   </svg>
 
-  <header class="topbar" id="topo">
-    <div class="wrap topbar__in">
-      <a href="#" class="brand" aria-label="ToniDev, início"><svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true"><use href="#marca"/></svg><span class="brand__name">Toni<span>Dev</span></span></a>
-      <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu">
-        <span class="menu-btn__icone" aria-hidden="true"><i></i><i></i></span>Menu
-      </button>
-      <nav class="nav" id="menu" aria-label="Principal">
+  <!-- menu flutuante -->
+  <header class="ilha" id="ilha">
+    <div class="ilha__barra">
+      <a href="#" class="marca" aria-label="ToniDev, início"><svg class="marca__simbolo" viewBox="0 0 40 42" aria-hidden="true"><use href="#logo"/></svg><span translate="no">tonidev</span></a>
+      <nav class="ilha__links" aria-label="Principal">
         <a href="#servicos">Serviços</a>
-        <a href="#projetos">Projetos</a>
         <a href="#como">Como funciona</a>
+        <a href="#projetos">Projetos</a>
         <a href="#sobre">Sobre</a>
-        <button class="btn nav__cta" data-open-quiz>Fazer o diagnóstico grátis</button>
       </nav>
-      <button class="btn btn--small btn--light" data-open-quiz>Fazer diagnóstico</button>
+      <button class="botao botao--pequeno" data-open-quiz>Fazer o diagnóstico grátis</button>
+      <button type="button" class="hamburguer" id="hamburguer" aria-expanded="false" aria-controls="menu-cheio" aria-label="Abrir menu"><i></i><i></i></button>
     </div>
   </header>
 
+  <!-- menu em tela cheia (celular) -->
+  <div class="menu-cheio" id="menu-cheio" hidden>
+    <nav aria-label="Menu">
+      <a href="#servicos" style="--i:0">Serviços</a>
+      <a href="#como" style="--i:1">Como funciona</a>
+      <a href="#projetos" style="--i:2">Projetos</a>
+      <a href="#sobre" style="--i:3">Sobre</a>
+    </nav>
+    <button class="botao" data-open-quiz style="--i:4">Fazer o diagnóstico grátis<span class="botao__icone" aria-hidden="true"><i class="ph-light ph-arrow-up-right"></i></span></button>
+  </div>
+
   <main id="conteudo">
-    <!-- Abertura: a rua do bairro à noite -->
-    <section class="hero">
-      <div class="wrap hero__in">
-        <h1><span class="h1__rua">Na rua, todo mundo te conhece.</span> <span class="h1__google">No Google, ninguém te acha.</span></h1>
-        <p class="hero__lead">Eu faço site, marca, perfil no Google e fotos para o seu negócio aparecer para quem procura. Descubra em 30 segundos o que está faltando no seu.</p>
-        <div class="hero__cta">
-          <button class="btn btn--big" data-open-quiz data-acende>Ver o que falta no meu negócio</button>
-          <p class="hero__note">Leva 30 segundos e não pede cadastro.</p>
+    <!-- 1. Abertura -->
+    <section class="abertura">
+      <div class="abertura__texto">
+        <h1 class="abertura__titulo">
+          <span class="linha"><span>Seu cliente está no Google.</span></span>
+          <span class="linha"><span>Ele acha você?</span></span>
+        </h1>
+        <p class="abertura__lead">Eu cuido da sua presença online, do Google ao site e à marca, para quem procura no celular encontrar você e chamar no WhatsApp.</p>
+        <div class="abertura__acoes">
+          <button class="botao" data-open-quiz>Fazer o diagnóstico grátis<span class="botao__icone" aria-hidden="true"><i class="ph-light ph-arrow-up-right"></i></span></button>
+          <a class="link-whats js-whats" href="#" target="_blank" rel="noopener"><i class="ph-light ph-whatsapp-logo" aria-hidden="true"></i>Falar no WhatsApp</a>
         </div>
       </div>
 
-      <div class="rua">
-        <div class="rua__lojas">
-          <span class="poste" style="--x: 13.2%" aria-hidden="true"></span>
-          <span class="poste" style="--x: 86.8%" aria-hidden="true"></span>
-
-          <div class="loja" style="--h: 250px; --w: 180px; --d: 0; --f: #13204f" aria-hidden="true">
-            <span class="loja__janelas"></span>
-            <span class="loja__placa">Ateliê Lina</span>
-            <span class="loja__toldo"></span>
-            <span class="loja__frente"><i class="vitrine"></i><i class="porta"></i></span>
-          </div>
-          <div class="loja" style="--h: 205px; --w: 190px; --d: 1; --f: #172656" aria-hidden="true">
-            <span class="loja__placa">Navalha &amp; Co.</span>
-            <span class="loja__toldo"></span>
-            <span class="loja__frente"><i class="vitrine"></i><i class="porta"></i></span>
-          </div>
-          <div class="loja" style="--h: 290px; --w: 200px; --d: 2; --f: #111c48" aria-hidden="true">
-            <span class="loja__janelas"></span>
-            <span class="loja__placa">Forno da Vila</span>
-            <span class="loja__toldo"></span>
-            <span class="loja__frente"><i class="vitrine"></i><i class="porta"></i></span>
-          </div>
-
-          <button class="loja loja--sua" style="--h: 240px; --w: 210px; --f: #0e1740" data-open-quiz data-acende aria-label="Seu negócio: fazer o diagnóstico grátis">
-            <span class="loja__janelas"></span>
-            <span class="loja__placa">Seu negócio</span>
-            <span class="loja__toldo"></span>
-            <span class="loja__frente"><i class="vitrine"></i><i class="porta"></i></span>
-            <span class="cavalete"><span class="cavalete__off">Essa é a sua?</span><span class="cavalete__on">Agora te acham</span></span>
-          </button>
-
-          <div class="loja" style="--h: 270px; --w: 200px; --d: 3; --f: #15235a" aria-hidden="true">
-            <span class="loja__janelas"></span>
-            <span class="loja__placa">Brasa Burger</span>
-            <span class="loja__toldo"></span>
-            <span class="loja__frente"><i class="vitrine"></i><i class="porta"></i></span>
-          </div>
-          <div class="loja" style="--h: 215px; --w: 190px; --d: 4; --f: #111c48" aria-hidden="true">
-            <span class="loja__placa">Patas Felizes</span>
-            <span class="loja__toldo"></span>
-            <span class="loja__frente"><i class="vitrine"></i><i class="porta"></i></span>
-          </div>
-          <div class="loja" style="--h: 255px; --w: 180px; --d: 5; --f: #172656" aria-hidden="true">
-            <span class="loja__janelas"></span>
-            <span class="loja__placa">Sorriso Leve</span>
-            <span class="loja__toldo"></span>
-            <span class="loja__frente"><i class="vitrine"></i><i class="porta"></i></span>
-          </div>
-        </div>
-        <div class="calcada" aria-hidden="true"></div>
-      </div>
-    </section>
-
-    <!-- Serviços -->
-    <section id="servicos" class="section">
-      <div class="wrap">
-        <h2 class="h2">O que eu faço pelo seu negócio</h2>
-        <p class="section__lead">Dá para começar por um serviço e somar os outros depois.</p>
-        <div class="services">
-          <article class="service">
-            <h3>Site</h3>
-            <p>Rápido, feito para o celular, com um botão que leva direto para o seu WhatsApp. Para quem pesquisa no Google e quer resolver logo.</p>
-            <p class="service__inclui">Cardápio ou catálogo, fotos, localização, horário e pedido pelo WhatsApp.</p>
-          </article>
-          <article class="service">
-            <h3>Identidade visual</h3>
-            <p>Logo, cores e fontes, com o padrão para usar na fachada, no cardápio, nas redes e na embalagem. A marca passa a ser lembrada.</p>
-            <p class="service__inclui">Três caminhos para você escolher e um guia da marca pronto para usar.</p>
-          </article>
-          <article class="service">
-            <h3>Google Meu Negócio</h3>
-            <p>Perfil completo e bem escrito, para aparecer antes do concorrente quando alguém procura o seu tipo de negócio no bairro.</p>
-            <p class="service__inclui">Categorias, descrição, produtos, posts, respostas às avaliações e uma mensagem pronta para pedir avaliação.</p>
-          </article>
-          <article class="service">
-            <h3>Fotos e vídeos com IA</h3>
-            <p>As fotos que você já tem viram imagens com cara de estúdio e vídeos curtos para o Instagram, o Google e anúncios.</p>
-            <p class="service__inclui">Sem marcar sessão de fotos. O produto continua sendo o seu, só o cenário muda.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Antes e depois -->
-    <section id="antes-depois" class="section section--ad">
-      <div class="wrap">
-        <h2 class="h2">O mesmo negócio, antes e depois</h2>
-        <p class="section__lead">Arraste a linha para comparar uma padaria que só existe no bairro com uma que também é encontrada na internet.</p>
-
-        <div class="ad" id="ad" style="--pos: 50%">
-          <!-- antes -->
-          <div class="ad__lado ad__lado--antes" aria-hidden="true">
-            <span class="ad__selo">Hoje</span>
-            <div class="ad__grade">
-              <div class="ad__bloco ad__marca"><span class="logo-antes">PADARIA<br>DA VILA</span><small>Sem logo e sem cores definidas</small></div>
-              <div class="ad__bloco ad__foto"><span class="foto-antes"></span><small>Foto escura, tirada às pressas</small></div>
-              <div class="ad__bloco ad__google">
-                <b>Padaria da Vila</b>
-                <small>Sem fotos e sem horário</small>
-                <small>Nenhuma avaliação respondida</small>
+      <div class="abertura__cena" aria-hidden="true">
+        <div class="cena">
+          <div class="moldura cena__busca"><div class="moldura__miolo">
+            <div class="g-campo"><i class="ph-light ph-magnifying-glass"></i><span class="g-termo" id="g-termo">padaria perto de mim</span><span class="g-cursor"></span></div>
+            <div class="g-resultado" id="g-resultado">
+              <span class="g-inicial" id="g-inicial">P</span>
+              <div class="g-dados">
+                <b id="g-nome">Padaria Pão da Hora</b>
+                <span class="g-linha"><i class="g-estrelas"></i><span id="g-tipo">Padaria</span></span>
+                <span class="g-aberto">Aberto agora</span>
               </div>
-              <div class="ad__bloco ad__site"><span class="sem-site">Sem site</span><small>Só um Instagram parado</small></div>
+              <div class="g-botoes"><span>Site</span><span>Rota</span><span class="g-whats"><i class="ph-light ph-whatsapp-logo"></i>WhatsApp</span></div>
+            </div>
+          </div></div>
+
+          <div class="notificacao" id="notificacao">
+            <span class="notificacao__icone"><i class="ph-light ph-whatsapp-logo"></i></span>
+            <div>
+              <small>WhatsApp, agora</small>
+              <p id="g-msg">Oi! Te achei no Google. Você faz encomenda para sábado?</p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <!-- depois -->
-          <div class="ad__lado ad__lado--depois" aria-hidden="true">
-            <span class="ad__selo ad__selo--depois">Depois</span>
-            <div class="ad__grade">
-              <div class="ad__bloco ad__marca">
-                <span class="logo-depois"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="56" fill="#7A2E1D"/><circle cx="60" cy="60" r="47" fill="none" stroke="#E9A23B" stroke-width="2" stroke-dasharray="3 5"/><path d="M34 66c0-14 12-24 26-24s26 10 26 24v6H34z" fill="#E9A23B"/><path d="M44 58c4-4 8-4 12 0M58 54c4-4 8-4 12 0" stroke="#7A2E1D" stroke-width="3" fill="none" stroke-linecap="round"/><text x="60" y="92" text-anchor="middle" font-family="Georgia,serif" font-size="8.5" font-weight="700" fill="#FFF4E0" letter-spacing=".6">FORNO DA VILA</text></svg></span>
-                <small>Logo, cores e fontes da marca</small>
-              </div>
-              <div class="ad__bloco ad__foto"><span class="foto-depois"><i class="pao pao--frances"></i><i class="pao pao--broa"></i></span><small>Foto de produto com cara de estúdio</small></div>
-              <div class="ad__bloco ad__google">
-                <b>Forno da Vila</b>
-                <small><i class="stars"></i>Padaria artesanal</small>
-                <small class="verde">Aberto agora, com fotos e horários</small>
-              </div>
-              <div class="ad__bloco ad__site">
-                <span class="mini-site"><i></i><i></i><em>Encomendar no WhatsApp</em></span>
-                <small>Site com encomendas pelo WhatsApp</small>
-              </div>
+    <!-- 2. Por que isso importa: a decisão do cliente em poucos segundos -->
+    <section class="decisao" aria-labelledby="frase">
+      <div class="decisao__painel">
+        <div class="decisao__texto">
+          <h2 class="decisao__titulo" id="frase">Quem procura no celular decide em poucos segundos.</h2>
+          <p class="decisao__sub">E escolhe quem aparece com:</p>
+          <ul class="decisao__motivos">
+            <li class="revela"><i class="ph-light ph-image" aria-hidden="true"></i><span><b>Foto</b>do lugar, do produto ou do seu trabalho</span></li>
+            <li class="revela"><i class="ph-light ph-star" aria-hidden="true"></i><span><b>Boas avaliações</b>e respostas para cada uma</span></li>
+            <li class="revela"><i class="ph-light ph-browser" aria-hidden="true"></i><span><b>Um site próprio</b>que mostra o que você faz e passa confiança</span></li>
+            <li class="revela"><i class="ph-light ph-whatsapp-logo" aria-hidden="true"></i><span><b>Um jeito fácil de chamar</b>com um toque, direto no WhatsApp</span></li>
+          </ul>
+          <p class="decisao__fecho revela">O resto fica para o concorrente.</p>
+        </div>
+
+        <div class="comparar" id="comparar" aria-hidden="true">
+          <p class="comparar__pergunta">Qual você chamaria?</p>
+          <div class="opcao opcao--fraca">
+            <span class="opcao__foto"></span>
+            <div class="opcao__dados">
+              <b>Negócio sem perfil completo</b>
+              <small>Sem fotos. Sem avaliações.</small>
+              <small>Sem site. Horário não informado.</small>
             </div>
           </div>
-
-          <span class="ad__linha" aria-hidden="true"><span class="ad__alca"><svg viewBox="0 0 24 24"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span></span>
-          <input class="ad__range" type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois: arraste para os lados" />
-        </div>
-      </div>
-    </section>
-
-    <!-- Projetos -->
-    <section id="projetos" class="section">
-      <div class="wrap">
-        <div class="section__head">
-          <div>
-            <h2 class="h2">Projetos</h2>
-            <p class="section__lead">Marcas fictícias que criei para mostrar como eu trabalharia em cada ramo. Os projetos de clientes entram aqui conforme forem entregues.</p>
+          <div class="opcao opcao--forte">
+            <span class="opcao__foto"><i class="ph-light ph-storefront"></i></span>
+            <div class="opcao__dados">
+              <b>Negócio com perfil completo</b>
+              <small class="opcao__estrelas"><i class="g-estrelas"></i>Bem avaliado</small>
+              <small class="opcao__aberto">Aberto agora</small>
+            </div>
+            <span class="opcao__selo"><i class="ph-light ph-check"></i>Escolhido</span>
+            <span class="opcao__botoes"><span class="opcao__site"><i class="ph-light ph-browser"></i>Ver site</span><span class="opcao__whats"><i class="ph-light ph-whatsapp-logo"></i>WhatsApp</span></span>
           </div>
-          <div class="filters" role="group" aria-label="Filtrar por ramo" id="filtros"></div>
-        </div>
-        <div class="projects" id="lista-projetos"></div>
-        <p class="swipe-hint" aria-hidden="true">Arraste para o lado para ver mais</p>
-      </div>
-    </section>
-
-    <!-- Como funciona -->
-    <section id="como" class="section">
-      <div class="wrap">
-        <h2 class="h2">Como funciona</h2>
-        <ol class="steps">
-          <li>
-            <h3>Conversa rápida</h3>
-            <p>Pelo WhatsApp ou numa chamada de 15 minutos. Entendo o seu negócio, seu público e o que você quer resolver primeiro.</p>
-          </li>
-          <li>
-            <h3>Proposta clara</h3>
-            <p>O que vou fazer, quanto custa e quando entrego, numa mensagem só. Sem letra miúda.</p>
-          </li>
-          <li>
-            <h3>Criação com você</h3>
-            <p>Você acompanha e opina em cada etapa. Ajusto até ficar do jeito certo.</p>
-          </li>
-          <li>
-            <h3>No ar e por perto</h3>
-            <p>Publico, ensino você a usar e continuo disponível para ajustes.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- Sobre -->
-    <section id="sobre" class="section">
-      <div class="wrap about">
-        <div class="about__mono" aria-hidden="true">AN</div>
-        <div>
-          <h2 class="h2">Prazer, Antonio Nogueira</h2>
-          <p>Sou desenvolvedor e designer freelancer. Crio sites rápidos, marcas com personalidade e fotos com inteligência artificial para negócios locais que querem ser encontrados e escolhidos.</p>
-          <p>Você fala direto comigo, do primeiro oi até a entrega. Sem agência no meio e sem enrolação.</p>
-          <p class="about__tools">Trabalho com HTML, CSS e JavaScript, React e Next.js, SEO local, design de marca e imagem com IA.</p>
         </div>
       </div>
     </section>
 
-    <!-- Chamada final -->
-    <section class="section final">
-      <div class="wrap final__in">
-        <h2 class="h2">Comece pelo diagnóstico</h2>
-        <p>Em 30 segundos você sabe o que falta e vê exemplos do seu ramo. Se fizer sentido, a gente conversa.</p>
-        <div class="final__cta">
-          <button class="btn btn--big" data-open-quiz>Fazer o diagnóstico</button>
-          <a class="btn btn--ghost" id="whats-direto" href="#" target="_blank" rel="noopener">Prefiro falar no WhatsApp</a>
+    <!-- 3. Serviços -->
+    <section id="servicos" class="servicos">
+      <div class="cabeca revela">
+        <h2 class="titulo">Cinco frentes, um objetivo: o cliente achar você.</h2>
+        <p class="cabeca__lead">Dá para começar por uma e somar as outras quando fizer sentido.</p>
+      </div>
+
+      <div class="bento">
+        <article class="bento__item bento__item--google revela">
+          <div class="moldura"><div class="moldura__miolo">
+            <i class="ph-light ph-map-pin icone" aria-hidden="true"></i>
+            <div>
+              <h3>Perfil no Google</h3>
+              <p>É o primeiro lugar onde o cliente te encontra. Deixo completo, com fotos, horário, serviços e respostas às avaliações.</p>
+            </div>
+            <div class="busca" aria-hidden="true">
+              <span class="busca__campo"><i class="ph-light ph-magnifying-glass"></i>barbearia perto de mim</span>
+              <span class="busca__resultado"><span class="busca__ponto"></span><b>Sua barbearia</b><small>Aberto agora</small></span>
+            </div>
+          </div></div>
+        </article>
+
+        <article class="bento__item bento__item--site revela">
+          <div class="moldura"><div class="moldura__miolo">
+            <i class="ph-light ph-device-mobile icone" aria-hidden="true"></i>
+            <div>
+              <h3>Site que termina no WhatsApp</h3>
+              <p>Abre rápido no celular, mostra o que você faz e os seus trabalhos, e leva o cliente direto para a conversa.</p>
+            </div>
+          </div></div>
+        </article>
+
+        <article class="bento__item bento__item--marca revela">
+          <div class="moldura"><div class="moldura__miolo">
+            <i class="ph-light ph-pen-nib icone" aria-hidden="true"></i>
+            <div>
+              <h3>Marca</h3>
+              <p>Logo, cores e letras que fazem você ser lembrado, do Instagram ao cartão de visita.</p>
+            </div>
+          </div></div>
+        </article>
+
+        <article class="bento__item bento__item--fotos revela">
+          <div class="moldura"><div class="moldura__miolo">
+            <i class="ph-light ph-camera icone" aria-hidden="true"></i>
+            <div>
+              <h3>Fotos com IA</h3>
+              <p>Suas fotos de produto ou de trabalho ganham cara de estúdio. O que aparece continua sendo seu, só o cenário melhora.</p>
+            </div>
+          </div></div>
+        </article>
+
+        <article class="bento__item bento__item--ia revela">
+          <div class="moldura"><div class="moldura__miolo">
+            <i class="ph-light ph-sparkle icone" aria-hidden="true"></i>
+            <div>
+              <h3>Assistentes de IA</h3>
+              <p>Dois assistentes com a cara da sua marca: um melhora as fotos, o outro escreve os posts. E eu ensino a usar.</p>
+            </div>
+          </div></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. Como funciona -->
+    <section id="como" class="como">
+      <div class="como__lado">
+        <h2 class="titulo revela">Como funciona</h2>
+        <p class="como__lead revela">Do primeiro oi até você aparecer no Google, acompanha tudo e fala direto comigo.</p>
+      </div>
+      <ol class="passos">
+        <li class="revela"><h3>Diagnóstico</h3><p>Você responde 4 perguntas e já vê o que está faltando. Leva 30 segundos.</p></li>
+        <li class="revela"><h3>Conversa</h3><p>Pelo WhatsApp ou numa chamada de 15 minutos, combinamos o que fazer primeiro, o preço e o prazo.</p></li>
+        <li class="revela"><h3>Criação</h3><p>Eu mostro cada etapa antes de seguir e ajusto até ficar do jeito certo.</p></li>
+        <li class="revela"><h3>No ar</h3><p>Publico tudo, te ensino a usar e continuo por perto para os ajustes.</p></li>
+      </ol>
+    </section>
+
+    <!-- 5. Projetos -->
+    <section id="projetos" class="projetos">
+      <div class="projetos__topo">
+        <div class="revela">
+          <h2 class="titulo">Projetos</h2>
+          <p class="cabeca__lead">Marcas que eu criei para mostrar como trabalho em cada ramo. Os clientes de verdade entram aqui conforme as entregas.</p>
+        </div>
+        <div class="filters" role="group" aria-label="Filtrar por ramo" id="filtros"></div>
+      </div>
+      <div class="projects" id="lista-projetos"></div>
+    </section>
+
+    <!-- 6. Sobre -->
+    <section id="sobre" class="sobre">
+      <div class="sobre__foto revela">
+        <div class="moldura"><div class="moldura__miolo">
+          <!-- TROCAR: foto do Antonio (retrato vertical, 4:5) -->
+          <span class="sobre__iniciais" aria-hidden="true">AN</span>
+        </div></div>
+      </div>
+      <div class="sobre__texto revela">
+        <h2 class="titulo">Prazer, Antonio.</h2>
+        <p>Sou designer e desenvolvedor. Ajudo negócios e profissionais a serem encontrados por quem procura no celular, e a passar confiança logo no primeiro contato.</p>
+        <p>Você fala direto comigo, do primeiro oi até a entrega. Sem agência no meio.</p>
+      </div>
+    </section>
+
+    <!-- 7. Chamada final -->
+    <section class="final">
+      <div class="final__painel revela">
+        <svg class="final__logo" viewBox="0 0 40 42" aria-hidden="true"><use href="#logo"/></svg>
+        <h2 class="final__titulo">Descubra o que falta para você aparecer.</h2>
+        <p>Quatro perguntas, 30 segundos e um plano com exemplos parecidos com o seu. Se fizer sentido, a gente conversa.</p>
+        <div class="final__acoes">
+          <button class="botao botao--tinta" data-open-quiz>Fazer o diagnóstico grátis<span class="botao__icone" aria-hidden="true"><i class="ph-light ph-arrow-up-right"></i></span></button>
+          <a class="link-whats link-whats--claro js-whats" id="whats-direto" href="#" target="_blank" rel="noopener"><i class="ph-light ph-whatsapp-logo" aria-hidden="true"></i>Prefiro falar no WhatsApp</a>
         </div>
       </div>
     </section>
@@ -266,11 +260,9 @@
     <section id="resultado" class="result" hidden tabindex="-1" aria-labelledby="resultado-titulo"></section>
   </main>
 
-  <footer class="footer">
-    <div class="wrap footer__in">
-      <span class="brand"><svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true"><use href="#marca"/></svg><span class="brand__name">Toni<span>Dev</span></span></span>
-      <span>Antonio Nogueira, <span id="ano"></span></span>
-    </div>
+  <footer class="rodape">
+    <a href="#" class="marca" aria-label="ToniDev, início"><svg class="marca__simbolo" viewBox="0 0 40 42" aria-hidden="true"><use href="#logo"/></svg><span translate="no">tonidev</span></a>
+    <p>Antonio Nogueira, <span id="ano"></span></p>
   </footer>
 
   <!-- Diagnóstico -->
@@ -279,7 +271,7 @@
       <header class="quiz__top">
         <div class="quiz__progress" aria-hidden="true"><span id="quiz-bar"></span></div>
         <span class="quiz__count" id="quiz-count">1 de 4</span>
-        <button type="button" class="quiz__close" data-close aria-label="Fechar diagnóstico">×</button>
+        <button type="button" class="quiz__close" data-close aria-label="Fechar diagnóstico"><i class="ph-light ph-x" aria-hidden="true"></i></button>
       </header>
       <div id="quiz-steps"></div>
       <footer class="quiz__nav">
