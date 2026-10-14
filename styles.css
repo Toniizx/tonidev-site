@@ -71,7 +71,6 @@ a { color: inherit; }
 
 /* ---------- marca */
 .marca { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--tinta); }
-.marca__simbolo { width: 30px; height: 32px; flex: none; color: var(--tinta); }
 .marca span { font-weight: 800; font-size: 21px; letter-spacing: -.04em; font-variation-settings: "wdth" 118; }
 
 /* ---------- menu flutuante (ilha) */
@@ -264,6 +263,13 @@ a { color: inherit; }
 .comparar.is-in .opcao--fraca { opacity: .55; filter: grayscale(1); transform: scale(.97); }
 .comparar.is-in .opcao--forte { transform: scale(1.03); box-shadow: 0 0 0 3px var(--aberto), 0 30px 60px -30px rgba(18,168,102,.8); }
 .comparar.is-in .opcao__selo { opacity: 1; transform: none; }
+/* com mouse: o cartão sob o cursor ganha o destaque, o outro apaga */
+@media (hover: hover) and (pointer: fine) {
+  .comparar.is-in .opcao--forte:hover { transform: scale(1.05) translateY(-4px); }
+  .comparar.is-in:has(.opcao--fraca:hover) .opcao--fraca { opacity: 1; filter: none; transform: scale(1.03); background: rgba(255,255,255,.1); color: rgba(255,255,255,.9); box-shadow: 0 0 0 3px var(--aberto), 0 30px 60px -30px rgba(18,168,102,.8); }
+  .comparar.is-in:has(.opcao--fraca:hover) .opcao--forte { opacity: .55; filter: grayscale(1); transform: scale(.97); box-shadow: none; }
+  .comparar.is-in:has(.opcao--fraca:hover) .opcao__selo { opacity: 0; transform: translateY(8px) scale(.9); transition-delay: 0s; }
+}
 
 @media (max-width: 900px) {
   .decisao { padding-inline: 12px; }
@@ -292,13 +298,26 @@ a { color: inherit; }
 .bento .moldura__miolo { display: flex; flex-direction: column; justify-content: space-between; gap: 28px; padding: clamp(24px, 3vw, 36px); }
 .bento h3 { margin: 0 0 10px; font-weight: 750; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.05; letter-spacing: -.03em; font-variation-settings: "wdth" 110; }
 .bento p { margin: 0; color: var(--grafite); max-width: 40ch; font-size: 17px; }
-.icone { font-size: 34px; color: var(--tinta); }
+.icone {
+  width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center;
+  font-size: 26px; color: var(--tinta); background: var(--papel);
+  transition: background .4s var(--mola), color .4s var(--mola), transform .5s var(--mola);
+}
+.bento .moldura { transition: transform .6s var(--mola); }
+@media (hover: hover) and (pointer: fine) {
+  .bento__item:hover .moldura { transform: translateY(-4px); }
+  .bento__item:hover .icone { background: var(--aberto); color: var(--branco); transform: rotate(-8deg); }
+}
 
 .bento__item--google .moldura__miolo { background: var(--tinta); color: var(--branco); }
 .bento__item--google h3 { font-size: clamp(30px, 3.4vw, 48px); }
-.bento__item--google p, .bento__item--google .icone { color: rgba(255,255,255,.72); }
+.bento__item--google p { color: rgba(255,255,255,.72); }
+.bento__item--google .icone { color: var(--branco); background: rgba(255,255,255,.08); }
 .bento__item--site .moldura__miolo { background: var(--aberto); color: var(--branco); }
-.bento__item--site p, .bento__item--site .icone { color: rgba(255,255,255,.88); }
+.bento__item--site p { color: rgba(255,255,255,.88); }
+.bento__item--site .icone { color: var(--branco); background: rgba(255,255,255,.16); }
+.bento__item--site:hover .icone { background: var(--branco); color: var(--aberto-escuro); }
+.bento__item--ia .icone { background: var(--branco); }
 .bento__item--ia .moldura__miolo { background: var(--papel-2); }
 
 /* a busca no cartão do Google */
@@ -400,7 +419,7 @@ a { color: inherit; }
   padding: clamp(40px, 7vw, 104px); border-radius: 36px; background: var(--aberto); color: var(--tinta);
 }
 .final__painel::after { content: ""; position: absolute; right: -8%; bottom: -30%; width: 46%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,.28), transparent 65%); pointer-events: none; }
-.final__logo { width: 64px; height: 68px; color: var(--tinta); --logo-ponto: #FFFFFF; --logo-miolo: #12A866; }
+.final__marca { font-weight: 800; font-size: 26px; letter-spacing: -.04em; font-variation-settings: "wdth" 118; color: var(--tinta); }
 .final__titulo { margin: 0; max-width: 16ch; font-weight: 800; font-size: clamp(36px, 5.6vw, 76px); line-height: .98; letter-spacing: -.05em; font-variation-settings: "wdth" 114; }
 .final__painel p { margin: 0; max-width: 46ch; font-size: clamp(17px, 1.4vw, 20px); color: rgba(21,23,26,.8); }
 .final__acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; margin-top: 8px; position: relative; z-index: 1; }
