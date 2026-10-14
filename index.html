@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,300..900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/light/style.css" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=6" />
 </head>
 <body>
   <a class="pular" href="#conteudo">Pular para o conteúdo</a>
@@ -35,7 +35,7 @@
   <!-- menu flutuante -->
   <header class="ilha" id="ilha">
     <div class="ilha__barra">
-      <a href="#" class="marca" aria-label="ToniDev, início"><svg class="marca__simbolo" viewBox="0 0 40 42" aria-hidden="true"><use href="#logo"/></svg><span translate="no">tonidev</span></a>
+      <a href="#" class="marca" aria-label="ToniDev, início"><span translate="no">ToniDev</span></a>
       <nav class="ilha__links" aria-label="Principal">
         <a href="#servicos">Serviços</a>
         <a href="#como">Como funciona</a>
@@ -50,12 +50,15 @@
   <!-- menu em tela cheia (celular) -->
   <div class="menu-cheio" id="menu-cheio" hidden>
     <nav aria-label="Menu">
-      <a href="#servicos" style="--i:0">Serviços</a>
-      <a href="#como" style="--i:1">Como funciona</a>
-      <a href="#projetos" style="--i:2">Projetos</a>
-      <a href="#sobre" style="--i:3">Sobre</a>
+      <a href="#servicos" class="menu-item" style="--i:0"><span class="menu-item__num" aria-hidden="true">01</span><span class="menu-item__nome">Serviços</span><span class="menu-item__seta" aria-hidden="true"><i class="ph-light ph-arrow-up-right"></i></span></a>
+      <a href="#como" class="menu-item" style="--i:1"><span class="menu-item__num" aria-hidden="true">02</span><span class="menu-item__nome">Como funciona</span><span class="menu-item__seta" aria-hidden="true"><i class="ph-light ph-arrow-up-right"></i></span></a>
+      <a href="#projetos" class="menu-item" style="--i:2"><span class="menu-item__num" aria-hidden="true">03</span><span class="menu-item__nome">Projetos</span><span class="menu-item__seta" aria-hidden="true"><i class="ph-light ph-arrow-up-right"></i></span></a>
+      <a href="#sobre" class="menu-item" style="--i:3"><span class="menu-item__num" aria-hidden="true">04</span><span class="menu-item__nome">Sobre</span><span class="menu-item__seta" aria-hidden="true"><i class="ph-light ph-arrow-up-right"></i></span></a>
     </nav>
-    <button class="botao" data-open-quiz style="--i:4">Fazer o diagnóstico grátis<span class="botao__icone" aria-hidden="true"><i class="ph-light ph-arrow-up-right"></i></span></button>
+    <div class="menu-cheio__acoes" style="--i:4">
+      <button class="botao" data-open-quiz>Fazer o diagnóstico grátis<span class="botao__icone" aria-hidden="true"><i class="ph-light ph-arrow-up-right"></i></span></button>
+      <a class="link-whats js-whats" href="#" target="_blank" rel="noopener"><i class="ph-light ph-whatsapp-logo" aria-hidden="true"></i>Falar no WhatsApp</a>
+    </div>
   </div>
 
   <main id="conteudo">
@@ -261,7 +264,7 @@
   </main>
 
   <footer class="rodape">
-    <a href="#" class="marca" aria-label="ToniDev, início"><svg class="marca__simbolo" viewBox="0 0 40 42" aria-hidden="true"><use href="#logo"/></svg><span translate="no">tonidev</span></a>
+    <a href="#" class="marca" aria-label="ToniDev, início"><span translate="no">ToniDev</span></a>
     <p>Antonio Nogueira, <span id="ano"></span></p>
   </footer>
 
@@ -281,7 +284,7 @@
     </form>
   </dialog>
 
-  <script src="projetos.js"></script>
-  <script src="app.js"></script>
+  <script src="projetos.js?v=6"></script>
+  <script src="app.js?v=6"></script>
 </body>
 </html>

@@ -568,6 +568,21 @@ if (frase) {
   atualizar()
 }
 
+// Menu flutuante vira vidro enquanto a pessoa rola para baixo; volta ao subir ou parar
+{
+  const ilha = $('#ilha')
+  let ultimoY = scrollY
+  let parou
+  addEventListener('scroll', () => {
+    const y = scrollY
+    if (y > ultimoY + 2 && y > 40) ilha.classList.add('is-vidro')
+    else if (y < ultimoY - 2) ilha.classList.remove('is-vidro')
+    ultimoY = y
+    clearTimeout(parou)
+    parou = setTimeout(() => ilha.classList.remove('is-vidro'), 700)
+  }, { passive: true })
+}
+
 // ---------------------------------------------------------------- início
 
 desenharFiltros()
